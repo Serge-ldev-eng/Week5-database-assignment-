@@ -1,19 +1,5 @@
 
--- WEEK 5 DATABASE ASSIGNMENT
--- Description: Practice advanced SQL queries based on real-world scenarios
-
--- Question 1: Write an SQL query to drop an index named IdxPhone from customers table.
--- Approach: Use DROP INDEX syntax. In MySQL, we must specify ON table name to tell the engine which table the index belongs to.
 DROP INDEX IdxPhone ON customers;
-
--- Question 2: Write an SQL query to create a user named bob with password 'S$cu3r3!', restricted to localhost hostname.
--- Approach: CREATE USER with 'user'@'host' syntax restricts login to localhost only. IDENTIFIED BY sets the password.
 CREATE USER 'bob'@'localhost' IDENTIFIED BY 'S$cu3r3!';
-
--- Question 3: Write an SQL query to grant the INSERT privilege to user bob on the salesDB database.
--- Approach: Use GRANT INSERT ON database.* to grant privilege on all tables in salesDB. TO specifies the user with localhost restriction.
 GRANT INSERT ON salesDB.* TO 'bob'@'localhost';
-
--- Question 4: Write an SQL query to change the password for user bob to 'P$55!23'
--- Approach: Use ALTER USER to modify authentication credentials for an existing user. This is the standard way to reset password.
 ALTER USER 'bob'@'localhost' IDENTIFIED BY 'P$55!23';
